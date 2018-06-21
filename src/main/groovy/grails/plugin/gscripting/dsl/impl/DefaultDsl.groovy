@@ -25,7 +25,7 @@ class DefaultDsl implements GroovyInterceptable {
 		this.log = LogFactory.getLog("grails.plugin.gscripting.script.${sre.qualifiedName}".toString());
 		grailsApplication.serviceClasses.each {
 			def bean = grailsApplication.mainContext.getBean(it.propertyName)
-			this.app.put(it.propertyName, grailsApplication.mainContext.getBean(it.propertyName))
+			this.app.put(it.propertyName, bean)
 		}
 	}
 
